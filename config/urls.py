@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
 
+from config.views import db_status
+
 
 def home(request):
     return HttpResponse(
@@ -13,4 +15,5 @@ def home(request):
 urlpatterns = [
     path("", home),
     path("admin/", admin.site.urls),
+    path('db-status/', db_status),
 ]
